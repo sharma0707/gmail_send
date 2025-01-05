@@ -29,6 +29,13 @@ public class App
 	System.out.println(properties);
 	
 	//host set
+	properties.put("mail.smtp.host", host);
+	properties.put("mail.smtp.port", "465");
+	properties.put("mail.smtp.ssl.enable", "true");
+	properties.put("mail.smtp.auth", "true");
+	
+	
+	//create sesion
 	
 		
 	}
