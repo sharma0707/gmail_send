@@ -24,14 +24,14 @@ public class Content {
 		properties.put("mail.smtp.port", 587);
 		properties.put("mail.smtp.host", "smtp.gmail.com");
 		
-		String user = "tulsi21sharma";
-		String pass= "";
+		
 		
 	jakarta.mail.Session session = jakarta.mail.Session.getInstance(properties, new Authenticator() {
 
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
-						
+				String user = "tulsi21sharma";
+				String pass= "";
 				return new PasswordAuthentication(user, pass);
 				
 			}	
