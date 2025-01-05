@@ -2,41 +2,36 @@ package com.Gmail_send;
 
 import java.util.Properties;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-        String message = "";
-        String subject = "";
-        String to = "";
-        String from = "";
-        
-        sendEmail(message, subject, to, from);
-     }
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
-	private static void sendEmail(String message, String subject, String to, String from) {
+import com.content.Content;
+
+
+public class App {
+	public static void main(String[] args) {
+		System.out.println("Trying to send the message...");
+		String text = "Hello Dear, This is the first message to you";
+		String subject = "Message testing";
+		String from = "tulsi21sharma@gmail.com";
+		String to = "rpsharma7799@gmail.com";
 		
-	//variable for gmail
-		String host= "smtp.gmail.com";
+		Content gmailContent = new Content();
+		boolean b = gmailContent.sendEmail(to, from, subject, text);
 		
-	//get the system properties
-	Properties properties =	System.getProperties();
-	System.out.println(properties);
-	
-	//host set
-	properties.put("mail.smtp.host", host);
-	properties.put("mail.smtp.port", "465");
-	properties.put("mail.smtp.ssl.enable", "true");
-	properties.put("mail.smtp.auth", "true");
-	
-	
-	//create sesion
-	
+		if(b) {
+			System.out.println("sent successfully....");
+		}
+		else {
+			System.out.println("something went wrong");
+		}
 		
 	}
-}
+
+		}
