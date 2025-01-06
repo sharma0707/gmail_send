@@ -31,7 +31,7 @@ public class Content {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
 				String user = "tulsi21sharma";
-				String pass= "";
+				String pass= "qwzp cueq jusa azfz";
 				return new PasswordAuthentication(user, pass);
 				
 			}	
@@ -44,13 +44,14 @@ public class Content {
 			msg.setSubject(subject);
 			msg.setText(text);
 			
+			//send message by transport
 			jakarta.mail.Transport.send(msg);
 			flag = true;
 			
 		} catch (Exception e) {
 			e.printStackTrace();		}
 		
-		return false;
+		return flag;
 		
 	}
 }
